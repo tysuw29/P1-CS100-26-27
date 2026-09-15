@@ -19,12 +19,12 @@ WIDTH = 40
 # a name is a str, an age is an int, a GPA is a float, and
 # honor-student is a bool (True or False, capitalized, no quotes).
 
-my_name = ""                  # str
-my_age = 0                    # int
-my_gpa = 0.0                  # float
-is_honor_student = False      # bool
-my_grade = 0                  # int
-favorite_subject = ""         # str
+my_name = "Ty Suwanprutsachati"                  # str
+my_age = 15                    # int
+my_gpa = 3.5                  # float
+is_honor_student = True      # bool
+my_grade = 10                 # int
+favorite_subject = "Computer Science"  # str
 
 
 # --- Step 2: calculations ---------------------------------------
@@ -32,25 +32,48 @@ favorite_subject = ""         # str
 # Do not type the answers in - let Python work them out.
 
 # TODO: age_in_5_years
+age_in_5_years = my_age + 5
 
 
 # TODO: years_until_graduation   (grade 12 minus your grade)
-
+years_until_graduation = 12 - my_grade
 
 # TODO: age_at_graduation        (use the variable you just made)
-
+age_at_graduation = my_age + years_until_graduation
 
 # --- Step 3: the card -------------------------------------------
 # Borders are WIDTH wide. The title is centered - calculate the
 # padding from WIDTH and len(title), don't count spaces.
 # Use f-strings for every line that shows a variable.
+title = "STUDENT INFO CARD"
+padding = (WIDTH - len(title)) // 2
 
+print("=" * WIDTH)
+print(" " * padding + title)
+print("=" * WIDTH)
+print(f"Name: {my_name}")
+print(f"Age: {my_age}")
+print(f"Grade: {my_grade}")
+print(f"GPA: {my_gpa}")
+print(f"Favorite subject: {favorite_subject}")
+print(f"Honor student: {is_honor_student}")
+print("-" * WIDTH)
+print(f"Age in 5 years: {age_in_5_years}")
+print(f"Years until graduation: {years_until_graduation}")
+print(f"Age at graduation: {age_at_graduation}")
+print("=" * WIDTH)
 
 # --- Step 4: show the types -------------------------------------
 # Print the type of four of your variables, plus ONE of your
 # calculated values. Use type().
 # Look closely at what the calculated one comes out as.
-
+print()
+print("TYPES USED")
+print(f"my_name           -> {type(my_name)}")
+print(f"my_age            -> {type(my_age)}")
+print(f"my_gpa            -> {type(my_gpa)}")
+print(f"is_honor_student  -> {type(is_honor_student)}")
+print(f"age_in_5_years    -> {type(age_in_5_years)}")
 
 # =============================================================
 # TARGET OUTPUT  (yours will show your own details)
