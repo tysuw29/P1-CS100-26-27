@@ -31,15 +31,18 @@ LINE = "========================"
 
 
 # TODO 1: ask how many rounds, and convert it with int()
-
+rounds = int(input("How many rounds? "))
 
 # TODO 2: print the header - LINE, the title, LINE again.
 #         This happens ONCE, before any round.
-
+print(LINE)
+print("       TRAINING LOG")
+print(LINE)
 
 # TODO 3: write a for loop that runs once per round.
 #         Use range().
-
+for round_num in range(rounds):
+    print(f"Round {round_num + 1} - {10 * (round_num + 1)} damage")
 
 # TODO 4: inside the loop, print one line per round:
 #             Round 1 - 10 damage
@@ -51,7 +54,8 @@ LINE = "========================"
 # TODO 5: after the loop, print LINE and then how many rounds were
 #         completed. These two lines must print ONCE, not once per
 #         round. The only thing that decides that is indentation.
-
+print(LINE)
+print(f"{rounds} rounds completed")
 
 # ---------- TEST BEFORE YOU SUBMIT ----------
 # Run it with 4, then with 1, then with 0.
