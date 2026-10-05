@@ -40,7 +40,7 @@ LINE = "========================"
 
 
 # TODO 1: ask how many rounds, convert with int()
-
+round = int(input("How many rounds? "))
 
 # TODO 2: create your three memory variables, BEFORE the loop.
 #         total     -> starts at 0
@@ -49,10 +49,14 @@ LINE = "========================"
 #
 #         Every one of these has to survive between runs of the loop.
 #         If you create them inside, they get wiped every time.
-
+total = 0
+big_hits = 0
+best = 0
 
 # TODO 3: print the header - LINE, title, LINE. Once.
-
+print(LINE)
+print("      SESSION REPORT")
+print(LINE)
 
 # TODO 4: loop once per round. Inside the loop:
 #           - work out this round's damage  (round number * 10)
@@ -60,11 +64,22 @@ LINE = "========================"
 #           - ADD the damage to total
 #           - if the damage is 30 or more, add 1 to big_hits
 #           - if the damage beats best, replace best
-
+for round_num in range(1, round + 1):
+  damage = round_num * 10
+  print(f"Round {round_num} - {damage} damage")
+  total += damage
+  if damage >= 30:
+    big_hits += 1
+  if damage > best:
+    best = damage
 
 # TODO 5: after the loop, print LINE and the three totals, then LINE.
 #         These print ONCE.
-
+print(LINE)
+print(f"Total damage: {total}")
+print(f"Big hits:     {big_hits}")
+print(f"Best round:   {best}")
+print(LINE)
 
 # ---------- TEST BEFORE YOU SUBMIT ----------
 #   4 rounds -> total 100, big hits 2, best 40
