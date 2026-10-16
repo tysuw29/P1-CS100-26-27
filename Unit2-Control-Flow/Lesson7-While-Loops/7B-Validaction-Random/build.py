@@ -46,13 +46,14 @@ guesses = 0
 
 # TODO 3: loop while the guess is wrong AND attempts is under 7.
 #         Both conditions, joined with `and` - that's Lesson 3.
-while guess != num:
-    guesses += 1
-    print("Not correct. Try again.")
+while guess != num and guesses < 7:
+    if guess < num:
+        print("Higher")
+    else:
+        print("Lower")
     guess = int(input("Guess (1-100): "))
-print("========")
-print("Correct! The number was", num)
-print("It took you", guesses, "guesses.")
+    guesses += 1
+
     
 
     # TODO 4: inside the loop, print "Higher" or "Lower".
@@ -64,7 +65,10 @@ print("It took you", guesses, "guesses.")
 # TODO 6: after the loop, there are only two ways it could have ended.
 #         Right guess   ->  Got it in N!
 #         Out of guesses ->  Out of guesses. It was N.
-
+if guess == num:
+    print(f"Got it in {guesses}!")
+else:
+    print(f"Out of guesses. It was {num}.")
 
 # ---------- STRETCH (optional) ----------
 # Reject guesses outside 1-100 without using up an attempt.
