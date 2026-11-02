@@ -35,11 +35,19 @@ def print_handle(username):
 #         prints "Engagement: " and the three added together
 #         print_engagement(500, 50, 200)  ->  Engagement: 750
 def print_engagement(likes, shares, comments):
+    engagement = likes + shares + comments
+    print(f"Engagement: {engagement}")
 
 # TODO 4: profile_card(username, likes, shares, comments)
 #         calls line, print_handle, print_engagement, then line again
-
+def profile_card(username, likes, shares, comments):
+    line()
+    print_handle(username)
+    print_engagement(likes, shares, comments)
+    line()
 
 # TODO 5: call profile_card for both accounts
 #         nasa:   500 likes, 50 shares, 200 comments
 #         tswift: 2000 likes, 300 shares, 450 comments
+profile_card("nasa", 500, 50, 200)
+profile_card("tswift", 2000, 300, 450)
