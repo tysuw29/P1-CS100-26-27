@@ -23,20 +23,21 @@ def total_likes(likes):
     """Return the sum of all the like counts."""
     total = 0
     for like in likes:
-        pass        # TODO: add like to total
-    # TODO: return the total - AFTER the loop, not inside it
+        total += like
+    return total
+
 
 
 def average_likes(likes):
     """Return the whole-number average of the like counts."""
     # Hint: call total_likes(likes), then divide by len(likes) using //
-    pass
+    return total_likes(likes) // len(likes)
 
 
 def last_three(likes):
     """Return the last three like counts, as a new list."""
     # Hint: a slice that starts three from the end
-    pass
+    return likes[-3:]
 
 
 # ---------- TESTS - don't change anything below this line ----------
@@ -55,3 +56,9 @@ print("Last three:", last_three(likes))
 # def trending_days(likes, limit):
 #     ...
 # print("Trending:", trending_days(likes, 1000))
+def trending_days(likes, limit):
+    result = []
+    for like in likes:
+        if like > limit:
+            result.append(like)
+    return result
