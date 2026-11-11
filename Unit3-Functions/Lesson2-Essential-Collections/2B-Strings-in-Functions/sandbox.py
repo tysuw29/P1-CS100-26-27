@@ -31,3 +31,33 @@ print(name.split())
 
 # ---------- Code Along 3: count (if you finish early) ----------
 # Use .count to print how many times "a" appears in "banana"   -> 3
+print("banana".count("a")) #3
+print("banana".count("an")) #2
+print("banana".count("banana")) #1
+
+
+# Pattern 1
+def count_vowels(word):
+    count = 0
+    for ch in word:
+        if ch in "aeiou":
+            count = count + 1
+    return count
+print(count_vowels("education"))
+
+# Pattern 2
+def first_vowel(word):
+    for ch in word:
+        if ch in "aeiou":
+            return ch
+    return None
+print(first_vowel("hip"))
+print(first_vowel("sky"))
+
+# Pattern 3
+def reverse_word(word):
+    result = ""
+    for ch in word:
+        result = ch + result
+    return result
+print(reverse_word("hello"))
